@@ -1,6 +1,6 @@
 <template>
  <div>
-   <HeaderAuth>
+   <HeaderAuth />
    <div class="header flex">
      <div class="left">
        <img class="logo" src="../assets/logo.png" alt />

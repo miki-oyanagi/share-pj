@@ -37,7 +37,7 @@ export default {
   data(){
     return{
       content:"",
-      data:[{name:太郎,like:[],share:"はじめまして"}]
+      data:[{name:"太郎",like:[],share:"はじめまして"}]
     };
   },
   components:{

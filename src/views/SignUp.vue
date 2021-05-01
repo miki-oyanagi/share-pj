@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeaderAuth>
+    <HeaderAuth />
       <div class="card">
         <p>新規作成</p>
         <input type="text" placeholder="ユーザーネーム">
