@@ -1,22 +1,13 @@
 <template>
  <div>
    <HeaderAuth />
-   <div class="header flex">
-     <div class="left">
-       <img class="logo" src="../assets/logo.png" alt />
-     </div>
-     <div class="right flex">
-       <p>新規登録</p>
-       <p>ログイン</p>
-     </div>
-   </div>
    <div class="card">
      <p>ログイン</p>
    </div>
    <div class="form">
-     <input type="email" placeholder="メールアドレス">
-     <input type="password" placeholder="パスワード">
-     <button>ログイン</button>
+     <input type="email" placeholder="メールアドレス" v-model="email" />
+     <input type="password" placeholder="パスワード" v-model="password" />
+     <button @click="auth">ログイン</button>
    </div>
 </div>
 </template>
@@ -24,8 +15,22 @@
 <script>
 import HeaderAuth from "../components/HeaderAuth"
 export default {
+  data(){
+    return{
+      email:"",
+      password:""
+    };
+  },
   components:{
     HeaderAuth
+  },
+  methods:{
+    auth(){
+      this.$store.dispatch("login",{
+        email:this.email,
+        password:this.password
+      });
+    }
   }
 };
 </script>
