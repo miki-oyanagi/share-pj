@@ -44,7 +44,7 @@ export default {
   methods:{
     send(){
     axios
-    .post("https://enigmatic-refuge-85810.herokuapp.com/api/comment",{
+    .post("http://localhost:8000/api/comment",{
       share_id:this.id,
       user_id:this.$store.state.user.id,
       content:this.content,
@@ -60,7 +60,7 @@ export default {
   },
   comment(){
     axios
-    .get("https://enigmatic-refuge-85810.herokuapp.com/api/shares"+this.id)
+    .get("http://localhost:8000/api/shares"+this.id)
     .then((response)=>{
       this.data=response.data.comment;
     });

@@ -38,7 +38,7 @@ export default {
           if(element.user_id == this.$store.state.user.id){
             axios({
               method:"delete",
-              url:"https://guarded-lake-44917.herokuapp.com/api/like",
+              url:"http://localhost:8000/api/like",
               data:{
                 share_id:this.shares[index].item.id,
                 user_id:this.$store.state.user.id,
@@ -54,7 +54,7 @@ export default {
         });
       }else{
         axios
-        .post("https://guarded-lake-44917.herokuapp.com/api/like",{
+        .post("http://localhost:8000/api/like",{
           share_id:this.shares[index].item.id,
           user_id:this.$store.state.user.id,
         })
@@ -70,7 +70,7 @@ export default {
     del(index){
       axios
       .delete(
-        "https://guarded-lake-44917.herokuapp.com/api/shares/" + this.shares[index].item.id
+        "http://localhost:8000/shares/" + this.shares[index].item.id
       )
       .then((response)=>{
         console.log(response);
@@ -83,12 +83,12 @@ export default {
     async getShares(){
       let data =[];
       const shares =await axios.get(
-        "https://guarded-lake-44917.herokuapp.com/api/shares"
+        "http://localhost:8000/api/shares"
       );
       for(let i =0; i<shares.data.length;i++){
         await axios
         .get(
-          "https://guarded-lake-44917.herokuapp.com/api/shares/" + shares.data.data[i].id
+          "http://localhost:8000/api/shares/" + shares.data.data[i].id
         )
         .then((response)=>{
           if(this.$route.name == "profile"){
