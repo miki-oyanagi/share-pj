@@ -4,7 +4,7 @@ import createPersistedState from "vuex-persistedstate";
 import axios from "axios";
 import router from "../router/index";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   plugins:[createPersistedState()],
@@ -29,14 +29,14 @@ export default new Vuex.Store({
   actions: {
     async login({commit},{email,password}){
       const responseLogin=await axios.post(
-        "http://localhost:8000/api/login",
+        "https://enigmatic-refuge-85810.herokuapp.com/api/login",
         {
           email:email,
           password:password,
         }
       );
       const responseUser =await axios.get(
-        "http://localhost:8000/api/user",
+        "https://enigmatic-refuge-85810.herokuapp.com/api/user",
         {
           params:{
             email:email,
@@ -49,7 +49,7 @@ export default new Vuex.Store({
     },
     logout({commit}){
       axios
-      .post("http://localhost:8000/api/logout",{
+      .post("https://enigmatic-refuge-85810.herokuapp.com/api/logout",{
         auth:this.state.auth,
       })
       .then((response)=>{

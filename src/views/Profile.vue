@@ -38,7 +38,7 @@ export default {
     edit(){
       if(!this.active){
         axios
-        .put("http://localhost:8000/api/user",{
+        .put("https://enigmatic-refuge-85810.herokuapp.com/api/user",{
           email:this.$store.state.user.email,
           profile:this.profile,
         })

@@ -30,7 +30,7 @@ export default {
   methods:{
     auth(){
       axios
-      .post("http://localhost:8000/api/register",{
+      .post("https://enigmatic-refuge-85810.herokuapp.com/api/register",{
         name:this.name,
         profile:this.profile,
         email:this.email,
